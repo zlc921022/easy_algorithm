@@ -83,22 +83,5 @@ public class T21 {
     }
 
 
-    class ListNode {
-        private int val;
-        ListNode next;
 
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        public void add(int val) {
-            if (this.next == null) {
-                this.next = new ListNode(val);
-            } else {
-                ListNode pre = this.next;
-                pre.next = new ListNode(val);
-                this.next = pre;
-            }
-        }
-    }
 }
