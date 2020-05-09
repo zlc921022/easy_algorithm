@@ -14,7 +14,9 @@ class ListNode {
         } else {
             ListNode pre = this.next;
             pre.next = new ListNode(val);
-            this.next = pre;
+          //  this.next = pre;
         }
     }
+
+   
 }
