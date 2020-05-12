@@ -16,10 +16,28 @@ package leetcode.editor.cn;
 // Related Topics 链表
 
 
+import org.junit.Test;
+
 public class T83 {
 
     public static void main(String[] args) {
 
+    }
+
+    @Test
+    public void test() {
+        ListNode node = new ListNode(1);
+        node.add(1);
+        node.add(1);
+        node.add(2);
+        node.add(2);
+        node.add(3);
+        node.add(3);
+
+        Solution s = new Solution();
+        ListNode newnode = s.deleteDuplicates(node);
+        System.out.println();
+        ListNode.printNode(newnode);
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -34,7 +52,29 @@ public class T83 {
      */
     class Solution {
         public ListNode deleteDuplicates(ListNode head) {
-            return null;
+            if (head == null || head.next == null) {
+                return head;
+            }
+            ListNode curr = head;
+            while (curr.next != null) {
+                if (curr.val == curr.next.val) {
+                    curr.next = curr.next.next;
+                } else {
+                    curr = curr.next;
+                }
+            }
+            return head;
+        }
+
+        public ListNode deleteDuplicates2(ListNode head) {
+            if (head == null || head.next == null) {
+                return head;
+            }
+            head.next = deleteDuplicates2(head.next);
+            if (head.val == head.next.val) {
+                head = head.next;
+            }
+            return head;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

@@ -29,9 +29,12 @@ public class T206 {
         node.add(2);
         node.add(3);
 
+        System.out.println("反转前");
+        ListNode.printNode(node);
+
         Solution s = new Solution();
-        node = s.reverseList(node);
-        System.out.println();
+        node = s.reverseList2(node);
+        System.out.println("反转后");
         ListNode.printNode(node);
     }
 
@@ -55,7 +58,6 @@ public class T206 {
                 curr.next = prev;
                 prev = curr;
                 curr = nextTemp;
-                ListNode.printNode(prev);
             }
             return prev;
         }
@@ -64,8 +66,10 @@ public class T206 {
             if (head == null || head.next == null) {
                 return head;
             }
-            head.next = reverseList(head);
-            return head;
+            ListNode p = reverseList2(head.next);
+            head.next.next = head;
+            head.next = null;
+            return p;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)

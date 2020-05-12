@@ -30,23 +30,7 @@ public class T21 {
 
         Solution s = new Solution();
         ListNode node = s.mergeTwoLists(l1, l2);
-        System.out.println();
-        printNode(node);
-    }
-
-    /**
-     * 打印节点数据
-     *
-     * @param node node节点
-     */
-    private void printNode(ListNode node) {
-        if (node != null) {
-            while (node.next != null) {
-                System.out.print(node.val + "->");
-                node = node.next;
-            }
-            System.out.println(node.val);
-        }
+        ListNode.printNode(node);
     }
 
     class Solution {
@@ -66,7 +50,7 @@ public class T21 {
                     curr = curr.next;
                     l2 = l2.next;
                 }
-                printNode(curr);
+                ListNode.printNode(curr);
 //                System.out.println("l1");
 //                printNode(l1);
 //                System.out.println("l2");
