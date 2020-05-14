@@ -10,6 +10,10 @@ class ListNode {
         this.node = this;
     }
 
+    ListNode() {
+        this.node = this;
+    }
+
     public void add(int val) {
         node.next = new ListNode(val);
         node = node.next;
