@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package leetcode.editor.cn.listnode;
 
 //[234]回文链表
 //请判断一个链表是否为回文链表。 

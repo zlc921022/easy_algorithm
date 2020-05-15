@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package leetcode.editor.cn.listnode;
 
 //[206]反转链表
 //反转一个单链表。 

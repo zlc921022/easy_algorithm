@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package leetcode.editor.cn.listnode;
 
 class ListNode {
     public int val;
