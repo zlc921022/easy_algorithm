@@ -10,29 +10,37 @@ public class TreeNode {
         this.val = x;
     }
 
-    TreeNode(){
+    TreeNode() {
 
     }
 
-    public void add(Integer e){
-        root = add(root,e);
+    public void add(Integer e) {
+        root = add(root, e);
     }
 
-    private TreeNode add(TreeNode node,Integer e){
-        if(node == null){
+    private TreeNode add(TreeNode node, Integer e) {
+        if (node == null) {
             return new TreeNode(e);
         }
-        if(e.compareTo(node.val) < 0) {
+        if (e.compareTo(node.val) < 0) {
             node.left = add(node.left, e);
-        }else if(e.compareTo(node.val) > 0) {
+        } else if (e.compareTo(node.val) > 0) {
             node.right = add(node.right, e);
         }
         return node;
     }
 
-//    private static void printTreeNode(TreeNode node){
-//        while (node != null){
-//            System.out.print();
-//        }
-//    }
+    public  void printTreeNode() {
+        TreeNode node = root;
+        printTree(node);
+    }
+
+    private  void printTree(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+        System.out.print(node.val + " ");
+        printTree(node.left);
+        printTree(node.right);
+    }
 }

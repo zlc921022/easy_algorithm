@@ -20,9 +20,7 @@ package leetcode.editor.cn;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class T94 {
 
@@ -34,12 +32,14 @@ public class T94 {
     @Test
     public void test() {
         TreeNode treeNode = new TreeNode();
-        treeNode.add(1);
-        treeNode.add(2);
         treeNode.add(3);
+        treeNode.add(2);
+        treeNode.add(1);
+        treeNode.add(4);
 
+//        TreeNode.printTreeNode();
         Solution s = new Solution();
-        List<Integer> list = s.inorderTraversal(treeNode);
+        List<Integer> list = s.levelOrderTraversal(treeNode.root);
         for (int i = 0; i < list.size(); i++) {
             System.out.print(list.get(i) + " ");
         }
@@ -59,45 +59,196 @@ public class T94 {
     class Solution {
 
         List<Integer> list;
-        public List<Integer> inorderTraversal(TreeNode root) {
+
+        public List<Integer> preorderTraversal(TreeNode root) {
             list = new ArrayList<>();
-            inorder1(root);
-            return list;
+            return preOrderNR(root);
         }
 
-        private void inorder(TreeNode root) {
+        public List<Integer> inorderTraversal(TreeNode root) {
+            list = new ArrayList<>();
+            return inOrderNR(root);
+        }
+
+        public List<Integer> afterOrderTraversal(TreeNode root) {
+            list = new ArrayList<>();
+            return afterOrderTraversal(root);
+        }
+
+        public List<Integer> levelOrderTraversal(TreeNode root){
+            list = new ArrayList<>();
+            return levelOrder(root);
+        }
+
+        /**
+         * 前序遍历 先根节点-->左节点-->右节点
+         *
+         * @param root 根节点
+         */
+        private void preOrder(TreeNode root) {
             if (root == null) {
                 return;
             }
-            inorder(root.left);
             list.add(root.val);
-            inorder(root.right);
+            preOrder(root.left);
+            preOrder(root.right);
         }
 
-        private List<Integer> inorder1(TreeNode root){
-            List<Integer> list = new ArrayList<>();
-            Stack<TreeNode> stack = new Stack<>();
-            if(root == null){
-                return list;
+        /**
+         * 中序遍历 先左节点-->根节点-->右节点
+         *
+         * @param root 根节点
+         */
+        private void inOrder(TreeNode root) {
+            if (root == null) {
+                return;
             }
-            stack.add(root);
-            while ( !stack.isEmpty()) {
+            inOrder(root.left);
+            list.add(root.val);
+            inOrder(root.right);
+        }
+
+        /**
+         * 后序遍历 先左节点-->右节点-->根节点
+         *
+         * @param root 根节点
+         */
+        private void afterOrder(TreeNode root) {
+            if (root == null) {
+                return;
+            }
+            afterOrder(root.left);
+            afterOrder(root.right);
+            list.add(root.val);
+        }
+
+
+        /**
+         * 前序遍历遍历形式非递归 先根节点-->左节点-->右节点
+         * 画图理解快
+         *
+         * @param root 根节点
+         */
+        private List<Integer> preOrderNR(TreeNode root) {
+            if (root == null) {
+                return new ArrayList<>();
+            }
+            Stack<TreeNode> stack = new Stack<>();
+            ArrayList<Integer> list = new ArrayList<>();
+            stack.push(root);
+            list.add(root.val);
+            while (!stack.isEmpty()) {
+                // 取出栈顶元素 但是不删除 pop是取出和删除
                 TreeNode node = stack.peek();
-                if(node.left != null){
+                if (node.left != null) {
+                    stack.push(node.left);
+                    list.add(node.left.val);
+                    node.left = null;
+                    continue;
+                }
+                if (node.right != null) {
+                    stack.push(node.right);
+                    list.add(node.right.val);
+                    node.right = null;
+                    continue;
+                }
+                stack.pop();
+            }
+            return list;
+        }
+
+        /**
+         * 中序遍历遍历形式非递归 先左节点-->根节点-->右节点
+         * 画图理解快
+         *
+         * @param root 根节点
+         */
+        private List<Integer> inOrderNR(TreeNode root) {
+            if (root == null) {
+                return new ArrayList<>();
+            }
+            Stack<TreeNode> stack = new Stack<>();
+            ArrayList<Integer> list = new ArrayList<>();
+            stack.add(root);
+            while (!stack.isEmpty()) {
+                // 取出栈顶元素 但是不删除 pop是取出和删除
+                TreeNode node = stack.peek();
+                if (node.left != null) {
                     stack.push(node.left);
                     node.left = null;
                     continue;
                 }
-                TreeNode pop = stack.pop();
-                list.add(pop.val);
-                if(node.right != null){
+                list.add(node.val);
+                stack.pop();
+                if (node.right != null) {
                     stack.push(node.right);
+                    node.right = null;
                 }
             }
             return list;
         }
 
+        /**
+         * 后序遍历遍历形式非递归 先左节点-->右节点-->根节点
+         * 画图理解快
+         *
+         * @param root 根节点
+         */
+        private List<Integer> afterOrderNR(TreeNode root) {
+            if (root == null) {
+                return new ArrayList<>();
+            }
+            Stack<TreeNode> stack = new Stack<>();
+            ArrayList<Integer> list = new ArrayList<>();
+            stack.add(root);
+            while (!stack.isEmpty()) {
+                // 取出栈顶元素 但是不删除 pop是取出和删除
+                TreeNode node = stack.peek();
+                if (node.left != null) {
+                    stack.push(node.left);
+                    node.left = null;
+                    continue;
+                }
+                if (node.right != null) {
+                    stack.push(node.right);
+                    node.right = null;
+                    continue;
+                }
+                list.add(node.val);
+                stack.pop();
+            }
+            return list;
+        }
 
+        /**
+         * 层序遍历
+         *
+         * @param root 根节点
+         */
+        private List<Integer> levelOrder(TreeNode root) {
+            if (root == null) {
+                return new ArrayList<>();
+            }
+            List<Integer> list = new ArrayList<>();
+            Deque<TreeNode> deque = new LinkedList<>();
+            deque.push(root);
+            list.add(root.val);
+            while (!deque.isEmpty()) {
+                TreeNode node = deque.peekLast();
+                if (node.left != null) {
+                    list.add(node.left.val);
+                    deque.push(node.left);
+                    node.left = null;
+                }
+                if (node.right != null) {
+                    list.add(node.right.val);
+                    deque.push(node.right);
+                    node.right = null;
+                }
+                deque.pollLast();
+            }
+            return list;
+        }
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
