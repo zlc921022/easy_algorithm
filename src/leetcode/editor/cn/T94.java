@@ -249,6 +249,41 @@ public class T94 {
             }
             return list;
         }
+
+
+        /**
+         * 层序遍历
+         *
+         * @param root 根节点
+         */
+        private List<List<Integer>> levelOrder2(TreeNode root) {
+            List<List<Integer>> lists = new ArrayList<>();
+            if (root == null) {
+                return lists;
+            }
+            Deque<TreeNode> deque = new LinkedList<>();
+            deque.push(root);
+            while (!deque.isEmpty()){
+                List<Integer> list = new ArrayList<>();
+                Deque<TreeNode> deque1 = new LinkedList<>();
+                // 遍历每一层
+                while ( !deque.isEmpty()){
+                    TreeNode node = deque.removeFirst();
+                    if(node.left != null){
+                        deque1.add(node.left);
+                        node.left = null;
+                    }
+                    if(node.right != null){
+                        deque1.add(node.right);
+                        node.right = null;
+                    }
+                    list.add(node.val);
+                }
+                deque = deque1;
+                lists.add(0,list);
+            }
+            return lists;
+        }
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
