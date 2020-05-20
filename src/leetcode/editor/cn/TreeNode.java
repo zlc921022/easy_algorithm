@@ -33,6 +33,7 @@ public class TreeNode {
     public  void printTreeNode() {
         TreeNode node = root;
         printTree(node);
+        System.out.println();
     }
 
     private  void printTree(TreeNode node) {
