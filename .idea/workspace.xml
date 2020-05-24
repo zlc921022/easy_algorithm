@@ -2,53 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9062229-e4c6-4798-af32-ed907040f3bb" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/周赛/_190/MaxVowels.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/周赛/_190/PrefixOfWord.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaochen/algorithm/ArrangeWords.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/周赛/_189/ArrangeWords.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaochen/algorithm/BusyStudent.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/周赛/_189/BusyStudent.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/xiaochen/algorithm/MainActivity.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/T100.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/T104.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/二叉树/T104.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/T110.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/二叉树/T110.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/T111.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/二叉树/T111.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/T167.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/二分法/T167.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/T226.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/二叉树/T226.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/T344.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/字符串/T344.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/T345.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/字符串/T345.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/T35.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/二分法/T35.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/T53I.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/二分法/T53I.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/T704.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/二分法/T704.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/T9.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/字符串/T9.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/T94.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/二叉树/T94.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/TreeNode.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/二叉树/TreeNode.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/arrays/a.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/dichotomy/a.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/game/n190/MaxVowels.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/game/n190/PrefixOfWord.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/ListNode.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/ListNode.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T0201.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T0201.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T0202.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T0202.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T0203.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T0203.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T0206.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T0206.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T0207.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T0207.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T1290.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T1290.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T141.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T141.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T18.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T18.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T206.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T206.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T21.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T21.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T22.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T22.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T234.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T234.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T237.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T237.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T24.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T24.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T83.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T83.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/listnode/T876.java" afterPath="$PROJECT_DIR$/src/leetcode/editor/cn/链表/T876.java" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/recursive/a.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/sort/a.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/string/a.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/leetcode/editor/cn/treenode/a.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="T345.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/leetcode/editor/cn/字符串/T345.java">
+      <file leaf-file-name="T1290.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/leetcode/editor/cn/链表/T1290.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="83" column="31" lean-forward="false" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
+            <state relative-caret-position="-1610">
+              <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -223,7 +177,51 @@
               <item name="Leetcode" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="二分法" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="二叉树" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="周赛" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="周赛" type="462c0819:PsiDirectoryNode" />
+              <item name="_189" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="周赛" type="462c0819:PsiDirectoryNode" />
+              <item name="_190" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
               <item name="字符串" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cn" type="462c0819:PsiDirectoryNode" />
+              <item name="链表" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -414,7 +412,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1590304820462</updated>
-      <workItem from="1590304823422" duration="4908000" />
+      <workItem from="1590304823422" duration="5109000" />
     </task>
     <servers />
   </component>
@@ -451,7 +449,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4908000" />
+    <option name="totallyTimeSpent" value="5109000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="833" extended-state="6" />
@@ -467,8 +465,8 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="leetcode" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26287264" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26287264" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292683" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Flutter Outline" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -667,14 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/leetcode/editor/cn/链表/T1290.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/leetcode/editor/cn/二叉树/TreeNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-174">
@@ -840,8 +830,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/leetcode/editor/cn/字符串/T345.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
+        <state relative-caret-position="1743">
           <caret line="83" column="31" lean-forward="false" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/leetcode/editor/cn/链表/T1290.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1610">
+          <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
           <folding />
         </state>
       </provider>
