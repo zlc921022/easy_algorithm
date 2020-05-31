@@ -1,16 +1,16 @@
 package leetcode.editor.cn.二叉树;
 
 public class TreeNode {
-    Integer val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode root;
+    public Integer val;
+    public TreeNode left;
+    public TreeNode right;
+    public TreeNode root;
 
-    TreeNode(Integer x) {
+    public TreeNode(Integer x) {
         this.val = x;
     }
 
-    TreeNode() {
+    public TreeNode() {
 
     }
 
