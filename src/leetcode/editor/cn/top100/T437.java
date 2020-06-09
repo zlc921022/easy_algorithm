@@ -1,5 +1,10 @@
 package leetcode.editor.cn.top100;
 
+import leetcode.editor.cn.二叉树.TreeNode;
+import org.junit.Test;
+
+import java.util.List;
+
 //[437]路径总和 III
 //给定一个二叉树，它的每个结点都存放着一个整数值。 
 //
@@ -30,15 +35,6 @@ package leetcode.editor.cn.top100;
 // Related Topics 树
 
 
-import leetcode.editor.cn.二叉树.TreeNode;
-import leetcode.editor.cn.排序.ArrayUtils;
-import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Stack;
-
 public class T437 {
 
     public static void main(String[] args) {
@@ -47,16 +43,7 @@ public class T437 {
 
     @Test
     public void test() {
-//        TreeNode node = new TreeNode();
-//        node.add(10);
-//        node.add(5);
-//        node.add(3);
-//        node.add(2);
-//////        node.add(1);
-////        node.add(9);
-////        node.add(8);
-////        node.add(7);
-//
+
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -71,102 +58,65 @@ public class T437 {
      * }
      */
     class Solution {
-
-
-
-
-        int num = 0;
-
         public int pathSum(TreeNode root, int sum) {
+            return pathSum(root, sum, new int[1000], 0);
+        }
+
+        /**
+         * 创建数组保存节点
+         * @param root
+         * @param sum
+         * @param arr
+         * @param p
+         * @return
+         */
+        public int pathSum(TreeNode root, int sum, int[] arr, int p) {
             if (root == null) {
                 return 0;
             }
-            int result = countPath(root, sum);
-            int a = pathSum(root.left, sum);
-            int b = pathSum(root.right, sum);
-            return result + a + b;
+            int temp = root.val;
+            int n = temp == sum ? 1 : 0;
+            if (p > 0) {
+                for (int i = p - 1; i>= 0 ; i--) {
+                    temp += arr[i];
+                    if (temp == sum) {
+                        n++;
+                    }
+                }
+            }
+            arr[p] = root.val;
+            int l = pathSum(root.left, sum, arr, p + 1);
+            int r = pathSum(root.right, sum, arr, p + 1);
+            return n + l + r;
         }
 
-        private int countPath(TreeNode root, int sum) {
+        /**
+         * 创建list保存其他节点
+         * @param root
+         * @param sum
+         * @param list
+         * @param p
+         * @return
+         */
+        public int pathSum1(TreeNode root, int sum, List<Integer> list, int p) {
             if (root == null) {
                 return 0;
             }
-            sum = sum - root.val;
-            int result = (sum == 0) ? 1 : 0;
-            return result + countPath(root.left, sum) + countPath(root.right, sum);
-        }
-
-        private int preNode(TreeNode root, int sum) {
-            int num = 0;
-            if (root.val == sum) {
-                num++;
-            }
-            TreeNode pre = null;
-            Stack<TreeNode> stack = new Stack<>();
-            if (root.val == sum || root.val > sum) {
-                stack.add(root.left);
-            } else {
-                stack.add(root);
-            }
-            while (!stack.isEmpty()) {
-                Stack<TreeNode> stack1 = new Stack<>();
-                TreeNode peek = stack.peek();
-                while (!stack.isEmpty()) {
-                    TreeNode node = stack.pop();
-                    if (node.right != null) {
-                        if (pre != null && node.right.val + pre.val + node.val == sum) {
-                            num++;
-                        } else if (node.right.val + node.val == sum) {
-                            num++;
-                        }
-                        stack1.add(node.right);
-                    }
-                    if (node.left != null) {
-                        if (pre != null && node.left.val + pre.val + node.val == sum) {
-                            num++;
-                        } else if (node.left.val + node.val == sum) {
-                            num++;
-                        }
-                        stack1.add(node.left);
+            int temp = root.val;
+            int n = temp == sum ? 1 : 0;
+            if (p > 0) {
+                for (int i = p - 1; i>= 0 ; i--) {
+                    temp += list.get(i);
+                    if (temp == sum) {
+                        n++;
                     }
                 }
-                stack = stack1;
-                pre = peek;
             }
-            return num;
+            list.add(p,root.val);
+            int l = pathSum1(root.left, sum, list, p + 1);
+            int r = pathSum1(root.right, sum, list, p + 1);
+            return n + l + r;
         }
-
-        private void printNode(TreeNode root) {
-            Stack<TreeNode> stack = new Stack<>();
-            List<List<Integer>> list = new ArrayList<>();
-            List<Integer> left = new ArrayList<>();
-            List<Integer> right = new ArrayList<>();
-            left.add(root.val);
-            right.add(root.val);
-            stack.add(root);
-            while (!stack.isEmpty()) {
-                TreeNode node = stack.pop();
-                System.out.print(node.val + " ");
-                if (node.right != null) {
-                    stack.add(node.right);
-                    right.add(node.right.val);
-                }
-                if (node.left != null) {
-                    stack.add(node.left);
-                    left.add(node.left.val);
-                }
-            }
-        }
-
-        private void print(List<Integer> list) {
-            System.out.println();
-            for (int i = 0; i < list.size(); i++) {
-                System.out.print(list.get(i) + " ");
-            }
-            System.out.println();
-        }
-
-
     }
 //leetcode submit region end(Prohibit modification and deletion)
 

@@ -1,4 +1,4 @@
-package leetcode.editor.cn;
+package leetcode.editor.cn.top100;
 
 import leetcode.editor.cn.二叉树.TreeNode;
 import org.junit.Test;
