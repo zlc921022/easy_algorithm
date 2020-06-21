@@ -45,16 +45,17 @@ public class T113 {
     public void test() {
         TreeNode treeNode = new TreeNode();
         treeNode.add(5);
-        treeNode.add(3);
-        treeNode.add(1);
-        treeNode.add(2);
+        treeNode.add(4);
         treeNode.add(9);
         treeNode.add(7);
         treeNode.add(10);
         treeNode.printTreeNode();
 
         Solution s = new Solution();
-        s.dfs(treeNode, 9,new ArrayDeque<>(),new ArrayList<>());
+        s.dfs(treeNode.root, 9, new ArrayDeque<>(), new ArrayList<>());
+
+        int fun = s.depth(treeNode.root);
+        System.out.println(fun);
     }
 
     //leetcode submit region begin(Prohibit modification and deletion)
@@ -69,21 +70,42 @@ public class T113 {
      * }
      */
     class Solution {
+
+        public int fun(int n) {
+            if (n == 0) {
+                return 1;
+            } else if(n == 1){
+                return 2;
+            } else {
+                return 2 * fun(n - 1);
+            }
+        }
+
+        public int depth(TreeNode node){
+            if(node == null){
+                return 0;
+            }
+            int l = depth(node.left);
+            int r = depth(node.right);
+            int result = Math.max(l, r) + 1;
+            System.out.println("result: " + result +" : node.val: " + node.val);
+            return result;
+        }
+
         public List<List<Integer>> pathSum(TreeNode root, int sum) {
             if (root == null) {
                 return null;
             }
             List<List<Integer>> list = new ArrayList<>();
-            if (isLeafNode(root)) {
-                ArrayList<Integer> list1 = new ArrayList<>(root.val);
-                list.add(list1);
-                return list;
+            sum = sum - root.val;
+            List<Integer> left = pathSum(root.left, sum, new ArrayList<>());
+            List<Integer> right = pathSum(root.right, sum, new ArrayList<>());
+            if( !left.isEmpty()) {
+                list.add(left);
             }
-            int temp = root.val;
-            List<Integer> left = pathSum(root.left, sum, new ArrayList<>(), 0, temp);
-            List<Integer> right = pathSum(root.right, sum, new ArrayList<>(), 0, temp);
-            list.add(left);
-            list.add(right);
+            if( !right.isEmpty()) {
+                list.add(right);
+            }
             return list;
         }
 
@@ -109,27 +131,21 @@ public class T113 {
             }
         }
 
-        public List<Integer> pathSum(TreeNode root, int sum, List<Integer> list, int p, int temp) {
+        public List<Integer> pathSum(TreeNode root, int sum, List<Integer> list) {
             if (root == null) {
-                return null;
+                return new ArrayList<>();
             }
-            if (p == 0) {
-                list.add(temp);
-            }
-            temp += root.val;
-            if (p > 0 && p <= list.size()) {
-                for (int i = 1; i < p; i++) {
-                    temp += list.get(i);
+            sum -= root.val;
+            list.add(root.val);
+            if (isLeafNode(root)) {
+                if (sum == 0) {
+                    return list;
+                } else {
+                    list.clear();
                 }
             }
-            if (temp == sum && isLeafNode(root)) {
-                list.add(root.val);
-                return list;
-            } else if (!isLeafNode(root)) {
-                list.add(root.val);
-            }
-            pathSum(root.left, sum, list, p + 1, temp);
-            pathSum(root.right, sum, list, p + 1, temp);
+            pathSum(root.left, sum, list);
+            pathSum(root.right, sum, list);
             return list;
         }
 

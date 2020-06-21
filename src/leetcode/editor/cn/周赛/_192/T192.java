@@ -1,6 +1,10 @@
 package leetcode.editor.cn.周赛._192;
 
+import org.junit.Test;
+
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author zlc
@@ -11,12 +15,13 @@ public class T192 {
 
     /**
      * 5428. 重新排列数组
-     *
+     * <p>
      * 给你一个数组 nums ，数组中有 2n 个元素，按 [x1,x2,...,xn,y1,y2,...,yn] 的格式排列。
-     请你将数组按 [x1,y1,x2,y2,...,xn,yn] 格式重新排列，返回重排后的数组。
-     输入：nums = [2,5,1,3,4,7], n = 3
-     输出：[2,3,5,4,1,7]
-     解释：由于 x1=2, x2=5, x3=1, y1=3, y2=4, y3=7 ，所以答案为 [2,3,5,4,1,7]
+     * 请你将数组按 [x1,y1,x2,y2,...,xn,yn] 格式重新排列，返回重排后的数组。
+     * 输入：nums = [2,5,1,3,4,7], n = 3
+     * 输出：[2,3,5,4,1,7]
+     * 解释：由于 x1=2, x2=5, x3=1, y1=3, y2=4, y3=7 ，所以答案为 [2,3,5,4,1,7]
+     *
      * @param nums
      * @param n
      * @return
@@ -37,18 +42,18 @@ public class T192 {
     /**
      * 5429. 数组中的 k 个最强值
      * 给你一个整数数组 arr 和一个整数 k 。
-
-     设 m 为数组的中位数，只要满足下述两个前提之一，就可以判定 arr[i] 的值比 arr[j] 的值更强：
-
-      |arr[i] - m| > |arr[j] - m|
-      |arr[i] - m| == |arr[j] - m|，且 arr[i] > arr[j]
-     请返回由数组中最强的 k 个值组成的列表。答案可以以 任意顺序 返回。
-
-     输入：arr = [1,2,3,4,5], k = 2
-     输出：[5,1]
-     解释：中位数为 3，按从强到弱顺序排序后，数组变为 [5,1,4,2,3]。最强的两个元素是 [5, 1]。[1, 5] 也是正确答案。
-     注意，尽管 |5 - 3| == |1 - 3| ，但是 5 比 1 更强，因为 5 > 1
-
+     * <p>
+     * 设 m 为数组的中位数，只要满足下述两个前提之一，就可以判定 arr[i] 的值比 arr[j] 的值更强：
+     * <p>
+     *  |arr[i] - m| > |arr[j] - m|
+     *  |arr[i] - m| == |arr[j] - m|，且 arr[i] > arr[j]
+     * 请返回由数组中最强的 k 个值组成的列表。答案可以以 任意顺序 返回。
+     * <p>
+     * 输入：arr = [1,2,3,4,5], k = 2
+     * 输出：[5,1]
+     * 解释：中位数为 3，按从强到弱顺序排序后，数组变为 [5,1,4,2,3]。最强的两个元素是 [5, 1]。[1, 5] 也是正确答案。
+     * 注意，尽管 |5 - 3| == |1 - 3| ，但是 5 比 1 更强，因为 5 > 1
+     *
      * @param arr
      * @param k
      * @return
@@ -58,30 +63,30 @@ public class T192 {
         int m = arr[(arr.length - 1) / 2];
         int[] temp = new int[k];
         int[] brr = new int[arr.length];
-        sort(arr,0,arr.length - 1,brr,m);
+        sort(arr, 0, arr.length - 1, brr, m);
         System.arraycopy(arr, 0, temp, 0, temp.length);
         return temp;
     }
 
-    public void sort(int[] arr, int left, int right,int[] brr,int m) {
+    public void sort(int[] arr, int left, int right, int[] brr, int m) {
         if (left >= right) {
             return;
         }
         int mid = (left + right) / 2;
-        sort(arr, left, mid,brr,m);
-        sort(arr, mid + 1, right,brr,m);
-        merge(arr, left, right, mid,brr,m);
+        sort(arr, left, mid, brr, m);
+        sort(arr, mid + 1, right, brr, m);
+        merge(arr, left, right, mid, brr, m);
     }
 
-    private void merge(int[] arr, int left, int right, int mid,int[] brr,int m) {
+    private void merge(int[] arr, int left, int right, int mid, int[] brr, int m) {
         int i = left;
         int j = mid + 1;
         int t = 0;
         while (i <= mid && j <= right) {
             if (Math.abs(arr[i] - m) < Math.abs(arr[j] - m) ||
-                    (Math.abs(arr[i] - m) == Math.abs(arr[j] - m) && arr[i] < arr[j])){
+                    (Math.abs(arr[i] - m) == Math.abs(arr[j] - m) && arr[i] < arr[j])) {
                 brr[t++] = arr[j++];
-            }else{
+            } else {
                 brr[t++] = arr[i++];
             }
         }
@@ -95,5 +100,53 @@ public class T192 {
         for (int k = 0; k + left <= right; k++) {
             arr[left + k] = brr[k];
         }
+    }
+
+    @Test
+    public void test() {
+//        int i = xorOperation(10, 5);
+//        System.out.println(i);
+        String[] names = {"gta","gta(1)","gta","avalon"};
+        names = getFolderNames(names);
+        for (int i = 0; i < names.length; i++) {
+            System.out.print(names[i] + " ");
+        }
+    }
+
+    public int xorOperation(int n, int start) {
+        int operation = 0;
+        for (int i = 0; i < n; i++) {
+            int temp = start + 2 * i;
+            operation ^= temp;
+        }
+        return operation;
+    }
+
+    public String[] getFolderNames(String[] names) {
+        int k = 0;
+        Map<String, Integer> map = new HashMap<>();
+        for (int i = 0; i < names.length; i++) {
+            if (map.containsKey(names[i])) {
+                if (names[i].contains("(")) {
+                    k = 0;
+                }
+                String temp = names[i] + "(" + (++k) + ")";
+                temp = find(map, temp, names[i], k);
+                map.put(temp, k);
+                names[i] = temp;
+            } else {
+                k = 0;
+                map.put(names[i], k);
+            }
+        }
+        return names;
+    }
+
+    private String find(Map<String, Integer> map, String temp, String value, int k) {
+        if (!map.containsKey(temp)) {
+            return temp;
+        }
+        temp = value + "(" + (++k) + ")";
+        return find(map, temp, value, k);
     }
 }
