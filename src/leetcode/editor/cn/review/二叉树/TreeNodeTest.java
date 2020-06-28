@@ -27,18 +27,20 @@ public class TreeNodeTest {
          * 1  3
          */
         TreeNode node = new TreeNode();
-        node.add(4);
+        node.add(5);
         node.add(2);
-        node.add(1);
-        node.add(3);
+        node.add(13);
+        node.add(14);
+        TreeNode node1 = convertBSTNR(node.root);
+        node1.printTreeNode();
 
-        TreeNode node1 = new TreeNode();
-        node1.add(4);
-        node1.add(2);
-        node1.add(1);
-        node1.add(3);
-        TreeNode node2 = mergeTrees(node.root, node1.root);
-        node2.printTreeNode();
+//        TreeNode node1 = new TreeNode();
+//        node1.add(4);
+//        node1.add(2);
+//        node1.add(1);
+//        node1.add(3);
+//        TreeNode node2 = mergeTrees(node.root, node1.root);
+//        node2.printTreeNode();
     }
 
     /**
@@ -461,5 +463,110 @@ public class TreeNodeTest {
         return t1;
     }
 
+
+    int num;
+
+    public TreeNode convertBST(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        convertBST(root.right);
+        root.val += num;
+        num = root.val;
+        convertBST(root.left);
+        return root;
+    }
+
+
+    /**
+     * 5
+     * 2  13
+     * 14
+     */
+    public TreeNode convertBSTNR(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        int sum = 0;
+        TreeNode node = root;
+        Stack<TreeNode> stack = new Stack<>();
+        while (!stack.isEmpty() || node != null) {
+            while (node != null) {
+                stack.add(node);
+                node = node.right;
+            }
+            node = stack.pop();
+            sum += node.val;
+            node.val = sum;
+            node = node.left;
+        }
+        return root;
+    }
+
+    /**
+     * 给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，
+     * 这条路径上所有节点值相加等于目标和。
+     *
+     * @param root
+     * @param sum
+     * @return 示例:
+     * 给定如下二叉树，以及目标和 sum = 22，
+     * 5
+     * / \
+     * 4   8
+     * /   / \
+     * 11  13  4
+     * /  \      \
+     * 7    2      1
+     */
+    public boolean hasPathSum(TreeNode root, int sum) {
+        if (root == null) {
+            return false;
+        }
+        sum -= root.val;
+        if (root.left == null && root.right == null) {
+            return sum == 0;
+        }
+        return hasPathSum(root.left, sum) || hasPathSum(root.right, sum);
+    }
+
+
+    /**
+     * 路径总和 III
+     * 给定一个二叉树，它的每个结点都存放着一个整数值。
+     * <p>
+     * 找出路径和等于给定数值的路径总数。
+     * <p>
+     * 路径不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。
+     * <p>
+     * 二叉树不超过1000个节点，且节点数值范围是 [-1000000,1000000] 的整数。
+     *
+     * @param root
+     * @param sum
+     * @return
+     */
+    public int pathSum(TreeNode root, int sum) {
+        return pathSum(root, sum, new int[1000], 0);
+    }
+
+    private int pathSum(TreeNode root, int sum, int[] arr, int p) {
+        if (root == null) {
+            return 0;
+        }
+        int temp = root.val;
+        int n = sum == root.val ? 1 : 0;
+        if (p >= 1) {
+            for (int i = p - 1; i >= 0; i--) {
+                temp += arr[i];
+                if (temp == sum) {
+                    n++;
+                }
+            }
+        }
+        arr[p] = root.val;
+        int l = pathSum(root.left, sum, arr, p + 1);
+        int r = pathSum(root.right, sum, arr, p + 1);
+        return n + l + r;
+    }
 
 }
