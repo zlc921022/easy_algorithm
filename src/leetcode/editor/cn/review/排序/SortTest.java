@@ -12,9 +12,13 @@ public class SortTest {
 
     @Test
     public void test() {
-        int[] arr = {9,8,7,6,5,4,3,2,1};
-        heapSort(arr);
+//        int[] arr = {9, 8, 7, 6, 5, 4, 3, 2, 1};
+//        heapSort(arr);
         // ArrayUtils.print(arr);
+
+        int[] brr = {1,2,3,4,5,6,7};
+        int search = binarySearch(brr, 4);
+        System.out.println(search);
     }
 
     /**
@@ -171,6 +175,10 @@ public class SortTest {
     }
 
 
+    /**
+     * 堆排序
+     * @param arr
+     */
     public void heapSort(int[] arr) {
         ArrayUtils.print(arr);
         // 构建大顶堆
@@ -210,4 +218,26 @@ public class SortTest {
         }
     }
 
+
+    /**
+     * 二分查找
+     * @param arr
+     * @param word
+     * @return
+     */
+    public int binarySearch(int[] arr, int word) {
+        int left = 0;
+        int right = arr.length - 1;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (word == arr[mid]) {
+                return mid;
+            } else if (word < arr[mid]) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return -1;
+    }
 }
